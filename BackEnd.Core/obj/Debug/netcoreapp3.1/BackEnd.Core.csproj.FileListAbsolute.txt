@@ -1,0 +1,12 @@
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Core\obj\Debug\netcoreapp3.1\BackEnd.Core.csprojAssemblyReference.cache
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Core\obj\Debug\netcoreapp3.1\BackEnd.Core.AssemblyInfoInputs.cache
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Core\obj\Debug\netcoreapp3.1\BackEnd.Core.AssemblyInfo.cs
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Core\bin\Debug\netcoreapp3.1\BackEnd.Core.deps.json
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Core\bin\Debug\netcoreapp3.1\BackEnd.Core.dll
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Core\bin\Debug\netcoreapp3.1\BackEnd.Core.pdb
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Core\bin\Debug\netcoreapp3.1\BackEnd.DataLayer.dll
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Core\bin\Debug\netcoreapp3.1\BackEnd.DataLayer.pdb
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Core\obj\Debug\netcoreapp3.1\BackEnd.Core.csproj.CopyComplete
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Core\obj\Debug\netcoreapp3.1\BackEnd.Core.dll
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Core\obj\Debug\netcoreapp3.1\BackEnd.Core.pdb
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Core\obj\Debug\netcoreapp3.1\BackEnd.Core.csproj.CoreCompileInputs.cache
