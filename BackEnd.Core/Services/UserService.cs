@@ -81,5 +81,20 @@ namespace BackEnd.Core.Services
             };
             return info;
         }
+
+        public async Task<bool> CheckUserStatus(string code)
+        {
+            var user = await _context.Users.SingleOrDefaultAsync(u => u.ActiveCode == code);
+            if(user != null)
+            {
+                user.IsActive = true;
+                user.ActiveCode = Guid.NewGuid().ToString().Replace("-", "0");
+                _context.Update(user);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+
+            return false;
+        }
     }
 }

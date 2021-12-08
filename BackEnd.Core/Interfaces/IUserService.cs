@@ -22,5 +22,7 @@ namespace BackEnd.Core.Interfaces
         Task<User> GetUserById(long id);
 
         Task<UserInfoDTO> GetUserInfo(long id);
+
+        Task<bool> CheckUserStatus(string code);
     }
 }

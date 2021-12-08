@@ -91,5 +91,15 @@ namespace BackEnd.Web.Controllers
             return Ok(new { status = "NotFound", description = "The user was not found" });
         }
 
+        [HttpGet("activate-account/{code}")]
+        public async Task<IActionResult> ActivateAccount(string code)
+        {
+            if (await _userService.CheckUserStatus(code))
+            {
+                return Ok(new {status = "Success", message = "account activated"});
+            }
+            return BadRequest(new {status = "NotFound", message = "user not found"});
+        }
+
     }
 }

@@ -57,4 +57,12 @@ namespace BackEnd.Core.DTOs.User
 
         public string Mobile { get; set; }
     }
+
+    public enum UserStatus
+    {
+        Enable,
+        Disable,
+        UserNotFound,
+        AlreadyActivated
+    }
 }
