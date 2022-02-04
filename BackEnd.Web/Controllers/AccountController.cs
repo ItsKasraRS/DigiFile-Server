@@ -10,6 +10,7 @@ using BackEnd.Core.DTOs.User;
 using BackEnd.Core.Interfaces;
 using BackEnd.Core.Services;
 using BackEnd.Core.Utilities.Extensions;
+using BackEnd.Core.Utilities.Security;
 using BackEnd.DataLayer.Entities.User;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Http;
@@ -62,7 +63,7 @@ namespace BackEnd.Web.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromForm] LoginDTO model)
+        public async Task<IActionResult> Login(LoginDTO model)
         {
             var res = await _userService.LoginUser(model);
             if (res != null)
@@ -83,7 +84,7 @@ namespace BackEnd.Web.Controllers
                         signingCredentials: signInCredentials
                     );
                     var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
-                    return Ok(new { token = tokenString, expireTime = 30, id = user.Id, status = "Success" });
+                    return Ok(new { token = tokenString, expireTime = 30, id = user.Id, username = user.Username, email = user.Email, status = "Success" });
                 }
                 return Ok(new { status = "Deactivated", description = "The user is suspended" });
             }
@@ -99,6 +100,24 @@ namespace BackEnd.Web.Controllers
                 return Ok(new {status = "Success", message = "account activated"});
             }
             return BadRequest(new {status = "NotFound", message = "user not found"});
+        }
+
+        [HttpPost("check-auth")]
+        public async Task<IActionResult> CheckAuth()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var userId = User.GetUserId();
+                var user = await _userService.GetUserById(userId);
+                return Ok(new { status = "Success", data = new { id = user.Id, email = user.Email, username = user.Username } });
+            }
+            return Ok(new { status = "UnAuthorized" });
+        }
+
+        [HttpGet("getUserById/{id}")]
+        public async Task<IActionResult> GetUserById(long id)
+        {
+            return Ok(new {status = "Success", data = await _userService.GetUserById(id)});
         }
 
     }

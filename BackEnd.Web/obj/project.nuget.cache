@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DLo2lA+xibyYFEoD+0Xs6LzlWykMw9Rpf5tlDunZNEIiKPrI1bDA7UCggZB1p+rAlFairXF6FnVKYPBLscY5wA==",
+  "dgSpecHash": "JDzEgV1kc0aB46sezvPR74il4k46jjCyRpbfm/WfSu8eQui9EcrHwtOyVwy7QLtkjd1wqHWWZLBUXInbm8QLiQ==",
   "success": true,
   "projectFilePath": "D:\\WorkSpace\\FileShop\\BackEnd\\BackEnd.Web\\BackEnd.Web.csproj",
   "expectedPackageFiles": [
@@ -104,6 +104,7 @@
     "C:\\Users\\Hp\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\3.1.5\\microsoft.visualstudio.web.codegenerators.mvc.3.1.5.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\Hp\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\mimekit\\2.15.0\\mimekit.2.15.0.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
@@ -153,6 +154,7 @@
     "C:\\Users\\Hp\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.0\\system.diagnostics.diagnosticsource.4.7.0.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\system.diagnostics.tools\\4.3.0\\system.diagnostics.tools.4.3.0.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\system.diagnostics.tracing\\4.3.0\\system.diagnostics.tracing.4.3.0.nupkg.sha512",
+    "C:\\Users\\Hp\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.dynamic.runtime\\4.0.11\\system.dynamic.runtime.4.0.11.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\system.globalization.calendars\\4.3.0\\system.globalization.calendars.4.3.0.nupkg.sha512",

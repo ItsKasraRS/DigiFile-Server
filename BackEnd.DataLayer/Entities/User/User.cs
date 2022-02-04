@@ -40,6 +40,9 @@ namespace BackEnd.DataLayer.Entities.User
         [StringLength(200, MinimumLength = 5)]
         public string Password { get; set; }
 
+        [Display(Name = "Avatar")]
+        public string ImageAvatar { get; set; }
+
         #region Refrences
 
         public List<UserRole> UserRoles { get; set; }

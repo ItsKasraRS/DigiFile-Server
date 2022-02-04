@@ -45,6 +45,7 @@ namespace BackEnd.Web
             #region IoC
 
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAdminUserService, AdminUserService>();
             services.AddScoped<IViewRenderService, RenderViewToString>();
 
             #endregion

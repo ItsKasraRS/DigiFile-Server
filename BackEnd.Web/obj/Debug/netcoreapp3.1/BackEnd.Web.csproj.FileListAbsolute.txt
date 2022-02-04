@@ -141,3 +141,8 @@ D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\obj\Debug\netcoreapp3.1\BackEnd.Web.Mv
 D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\obj\Debug\netcoreapp3.1\BackEnd.Web.MvcApplicationPartsAssemblyInfo.cache
 D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\obj\Debug\netcoreapp3.1\BackEnd.Web.Views.pdb
 D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EmailTemp.cshtml.g.cs
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
