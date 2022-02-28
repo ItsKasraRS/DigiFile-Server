@@ -11,6 +11,9 @@ namespace BackEnd.DataLayer.Entities.Product
         [Key]
         public long Id { get; set; }
 
+        public int CategoryId { get; set; }
+
+        public int? SubCategoryId { get; set; }
 
         [Display(Name = "Title")]
         [Required]
@@ -30,7 +33,7 @@ namespace BackEnd.DataLayer.Entities.Product
 
         [Display(Name = "Product price")]
         [Required]
-        public int Price { get; set; }
+        public decimal Price { get; set; }
 
         public bool IsDelete { get; set; }
 
@@ -40,6 +43,12 @@ namespace BackEnd.DataLayer.Entities.Product
         public List<ProductInfo> ProductInfos { get; set; }
 
         public List<Comment> Comments { get; set; }
+
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; }
+
+        [ForeignKey("SubCategoryId")]
+        public Category SubCategory { get; set; }
 
         public List<OrderDetail> OrderDetails { get; set; }
 

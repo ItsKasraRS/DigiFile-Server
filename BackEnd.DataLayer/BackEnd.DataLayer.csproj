@@ -11,6 +11,10 @@
     <Compile Remove="Migrations\20210922212404_mig_CommentRefrences.Designer.cs" />
     <Compile Remove="Migrations\20210922213654_mig_InitDB.cs" />
     <Compile Remove="Migrations\20210922213654_mig_InitDB.Designer.cs" />
+    <Compile Remove="Migrations\20220216152828_mig_InitialCategoryTbl.cs" />
+    <Compile Remove="Migrations\20220216152828_mig_InitialCategoryTbl.Designer.cs" />
+    <Compile Remove="Migrations\20220216155243_mig_InitialCategoryTbl.cs" />
+    <Compile Remove="Migrations\20220216155243_mig_InitialCategoryTbl.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

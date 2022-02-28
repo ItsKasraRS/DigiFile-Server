@@ -44,10 +44,11 @@ namespace BackEnd.Web
 
             #region IoC
 
-            services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IAdminUserService, AdminUserService>();
             services.AddScoped<IViewRenderService, RenderViewToString>();
-
+            services.AddScoped<IUserService, UserService>(); services.AddScoped<IAdminUserService, AdminUserService>();
+            services.AddScoped<IProductService, ProductService>(); services.AddScoped<IAdminProductService, AdminProductService>();
+            services.AddScoped<ICategoryService, CategoryService>(); services.AddScoped<IAdminCategoryService, AdminCategoryService>();
+            
             #endregion
 
             services.AddMvcCore()
