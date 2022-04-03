@@ -15,6 +15,8 @@ namespace BackEnd.DataLayer.Entities.Product
 
         public string Title { get; set; }
 
+        public bool IsDelete { get; set; }
+
         #region Relation
 
         [ForeignKey("ParentId")]

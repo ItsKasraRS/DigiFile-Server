@@ -23,6 +23,8 @@ namespace BackEnd.DataLayer.Entities.Product
 
         public long? ParentId { get; set; }
 
+        public bool IsDelete { get; set; }
+
         #region Refrences
 
         [ForeignKey("UserId")]
