@@ -9,6 +9,7 @@ using BackEnd.Core.Interfaces;
 using Backend.Core.Utilities.Extensions;
 using BackEnd.DataLayer.Context;
 using BackEnd.DataLayer.Entities.Product;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
 namespace BackEnd.Core.Services
@@ -46,7 +47,7 @@ namespace BackEnd.Core.Services
 
         public async Task<AdminFilterProducts> GetProductsForAdmin(int pageId = 1, string filterTitle = "")
         {
-            IQueryable<Product> product = _context.Products.Include(p => p.ProductInfos).Where(p=>!p.IsDelete);
+            IQueryable<Product> product = _context.Products.Include(p => p.ProductInfos).Where(p => !p.IsDelete);
             if (!String.IsNullOrEmpty(filterTitle))
             {
                 product = product.Where(p => p.Title.Contains(filterTitle));
@@ -61,7 +62,7 @@ namespace BackEnd.Core.Services
             return list;
         }
 
-        public async Task AddProductForAdmin(AddProductDTO model)
+        public async Task AddProductForAdmin(AddProductDTO model, IFormFile sourceFile)
         {
             var product = new Product()
             {
@@ -72,8 +73,19 @@ namespace BackEnd.Core.Services
                 Like = 0,
                 CategoryId = model.Category,
                 SubCategoryId = model.SubCategory,
-                Image = "no-image.jpg"
+                Image = "no-image.jpg",
+                SourceFile = ""
             };
+            var imagePath = "";
+            if (sourceFile != null)
+            {
+                product.SourceFile = Guid.NewGuid().ToString("N") + Path.GetExtension(sourceFile.FileName);
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/file/", product.SourceFile);
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    sourceFile.CopyTo(stream);
+                }
+            }
             if (!string.IsNullOrEmpty(model.SelectedImage))
             {
                 var imageFile = ImageUploaderExtension.Base64ToImage(model.SelectedImage);
@@ -97,7 +109,8 @@ namespace BackEnd.Core.Services
                 Category = product.CategoryId,
                 SubCategory = product.SubCategoryId,
                 Image = product.Image,
-                ReleaseDate = product.ReleaseDate
+                ReleaseDate = product.ReleaseDate,
+                SourceFile = product.SourceFile
             };
             return model;
         }
@@ -112,6 +125,22 @@ namespace BackEnd.Core.Services
             product.SubCategoryId = model.SubCategory;
             product.ReleaseDate = model.ReleaseDate;
             product.Image = model.Image;
+            product.SourceFile = model.SourceFile;
+
+            var imagePath = "";
+            if (model.SelectedSourceFile != null)
+            {
+                if (model.Image == null) {
+                    product.SourceFile = Guid.NewGuid().ToString("N") + Path.GetExtension(model.SelectedSourceFile.FileName);
+                }
+
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/file/",
+                    product.SourceFile);
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    model.SelectedSourceFile.CopyTo(stream);
+                }
+            }
 
             if (!string.IsNullOrEmpty(model.SelectedImage))
             {

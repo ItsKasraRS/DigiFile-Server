@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using Microsoft.AspNetCore.Http;
 
 namespace BackEnd.Core.DTOs.Product
 {
@@ -26,7 +27,9 @@ namespace BackEnd.Core.DTOs.Product
         [MaxLength(500)]
         public string Description { get; set; }
 
-        public string Image { get; set; }
+        //public string Image { get; set; }
+
+        //public string SourceFile { get; set; }
 
         [Display(Name = "Product price")]
         [Required]
@@ -36,6 +39,9 @@ namespace BackEnd.Core.DTOs.Product
         public int? SubCategory { get; set; }
 
         public string SelectedImage { get; set; }
+
+        public IFormFile SelectedSourceFile { get; set; }
+
     }
 
     public class EditProductDTO
@@ -54,6 +60,8 @@ namespace BackEnd.Core.DTOs.Product
 
         public string Image { get; set; }
 
+        public string SourceFile { get; set; }
+
         [Display(Name = "Product price")]
         [Required]
         public decimal Price { get; set; }
@@ -62,6 +70,8 @@ namespace BackEnd.Core.DTOs.Product
         public int? SubCategory { get; set; }
 
         public string SelectedImage { get; set; }
+
+        public IFormFile SelectedSourceFile { get; set; }
 
         public DateTime ReleaseDate { get; set; }
     }

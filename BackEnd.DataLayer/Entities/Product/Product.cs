@@ -37,6 +37,8 @@ namespace BackEnd.DataLayer.Entities.Product
 
         public bool IsDelete { get; set; }
 
+        [Display(Name = "Source file")]
+        public string SourceFile { get; set; }
 
         #region Refrences
 
