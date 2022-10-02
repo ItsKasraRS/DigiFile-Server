@@ -24,6 +24,12 @@ namespace BackEnd.Core.Services
         }
 
         #endregion
+
+
+        public async Task<List<Category>> GetCategoriesForHeader()
+        {
+            return await _context.Categories.Where(c => !c.IsDelete).ToListAsync();
+        }
     }
 
     public class AdminCategoryService : IAdminCategoryService

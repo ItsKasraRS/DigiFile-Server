@@ -120,5 +120,11 @@ namespace BackEnd.Web.Controllers
             return Ok(new {status = "Success", data = await _userService.GetUserById(id)});
         }
 
+        [HttpGet("get-sidebar-info/{id}")]
+        public async Task<IActionResult> GetSidebarInfoById(long id)
+        {
+            return Ok(new { status = "Success", data = await _userService.GetUserInfo(id) });
+        }
+
     }
 }

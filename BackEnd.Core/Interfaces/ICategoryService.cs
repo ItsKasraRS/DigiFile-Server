@@ -9,7 +9,7 @@ namespace BackEnd.Core.Interfaces
 {
     public interface ICategoryService
     {
-        
+        Task<List<Category>> GetCategoriesForHeader();
     }
 
     public interface IAdminCategoryService
