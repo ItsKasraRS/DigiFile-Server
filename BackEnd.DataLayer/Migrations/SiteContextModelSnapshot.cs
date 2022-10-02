@@ -233,6 +233,26 @@ namespace BackEnd.DataLayer.Migrations
                     b.ToTable("ProductInfos");
                 });
 
+            modelBuilder.Entity("BackEnd.DataLayer.Entities.User.Permission", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ParentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("Permission");
+                });
+
             modelBuilder.Entity("BackEnd.DataLayer.Entities.User.Role", b =>
                 {
                     b.Property<int>("Id")
@@ -251,6 +271,28 @@ namespace BackEnd.DataLayer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("BackEnd.DataLayer.Entities.User.RolePermission", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("PermissionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PermissionId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("RolePermissions");
                 });
 
             modelBuilder.Entity("BackEnd.DataLayer.Entities.User.User", b =>
@@ -393,6 +435,28 @@ namespace BackEnd.DataLayer.Migrations
                     b.HasOne("BackEnd.DataLayer.Entities.Product.Product", "Product")
                         .WithMany("ProductInfos")
                         .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BackEnd.DataLayer.Entities.User.Permission", b =>
+                {
+                    b.HasOne("BackEnd.DataLayer.Entities.User.Permission", null)
+                        .WithMany("Permissions")
+                        .HasForeignKey("ParentId");
+                });
+
+            modelBuilder.Entity("BackEnd.DataLayer.Entities.User.RolePermission", b =>
+                {
+                    b.HasOne("BackEnd.DataLayer.Entities.User.Permission", "Permission")
+                        .WithMany("RolePermissions")
+                        .HasForeignKey("PermissionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BackEnd.DataLayer.Entities.User.Role", "Role")
+                        .WithMany("RolePermissions")
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

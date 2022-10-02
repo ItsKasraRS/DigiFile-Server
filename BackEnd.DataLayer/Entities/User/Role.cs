@@ -21,6 +21,7 @@ namespace BackEnd.DataLayer.Entities.User
         #region Refrences
 
         public List<UserRole> UserRoles { get; set; }
+        public List<RolePermission> RolePermissions { get; set; }
 
         #endregion
     }

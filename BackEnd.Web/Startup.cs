@@ -49,14 +49,14 @@ namespace BackEnd.Web
             services.AddScoped<IUserService, UserService>(); services.AddScoped<IAdminUserService, AdminUserService>();
             services.AddScoped<IProductService, ProductService>(); services.AddScoped<IAdminProductService, AdminProductService>();
             services.AddScoped<ICategoryService, CategoryService>(); services.AddScoped<IAdminCategoryService, AdminCategoryService>();
-            
+            services.AddScoped<IRoleService, RoleService>(); services.AddScoped<IAdminRoleService, AdminRoleService>();
+
             #endregion
 
-            services.AddMvcCore()
-                .AddAuthorization();
-            services.AddAuthorization();
-
             #region Authentication
+
+            services.AddMvcCore().AddAuthorization();
+            services.AddAuthorization();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {

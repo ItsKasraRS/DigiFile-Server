@@ -10,14 +10,14 @@
         "projectUniqueName": "D:\\WorkSpace\\FileShop\\BackEnd\\BackEnd.Core\\BackEnd.Core.csproj",
         "projectName": "BackEnd.Core",
         "projectPath": "D:\\WorkSpace\\FileShop\\BackEnd\\BackEnd.Core\\BackEnd.Core.csproj",
-        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\my name\\.nuget\\packages\\",
         "outputPath": "D:\\WorkSpace\\FileShop\\BackEnd\\BackEnd.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\my name\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,6 +29,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
               "D:\\WorkSpace\\FileShop\\BackEnd\\BackEnd.DataLayer\\BackEnd.DataLayer.csproj": {
                 "projectPath": "D:\\WorkSpace\\FileShop\\BackEnd\\BackEnd.DataLayer\\BackEnd.DataLayer.csproj"
@@ -44,6 +45,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "MailKit": {
               "target": "Package",
@@ -64,7 +66,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -73,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -83,14 +86,11 @@
         "projectUniqueName": "D:\\WorkSpace\\FileShop\\BackEnd\\BackEnd.DataLayer\\BackEnd.DataLayer.csproj",
         "projectName": "BackEnd.DataLayer",
         "projectPath": "D:\\WorkSpace\\FileShop\\BackEnd\\BackEnd.DataLayer\\BackEnd.DataLayer.csproj",
-        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\my name\\.nuget\\packages\\",
         "outputPath": "D:\\WorkSpace\\FileShop\\BackEnd\\BackEnd.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\my name\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -102,6 +102,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -113,6 +114,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -144,7 +146,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

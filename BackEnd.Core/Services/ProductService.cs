@@ -28,6 +28,23 @@ namespace BackEnd.Core.Services
         }
 
         #endregion
+
+        // Site Services
+
+        #region Get Latest products - site
+
+        public async Task<List<GetLatestProducts>> GetLatestProducts()
+        {
+            return await _context.Products.Where(p => !p.IsDelete).OrderByDescending(p => p.ReleaseDate).Take(8).Select(p =>
+                new GetLatestProducts()
+                {
+                    Title = p.Title,
+                    Price = p.Price,
+                    Image = p.Image
+                }).ToListAsync();
+        }
+
+        #endregion
     }
 
     public class AdminProductService : IAdminProductService
@@ -45,6 +62,10 @@ namespace BackEnd.Core.Services
 
         #endregion
 
+        // Admin Services
+
+        #region Get products - admin
+
         public async Task<AdminFilterProducts> GetProductsForAdmin(int pageId = 1, string filterTitle = "")
         {
             IQueryable<Product> product = _context.Products.Include(p => p.ProductInfos).Where(p => !p.IsDelete);
@@ -61,6 +82,10 @@ namespace BackEnd.Core.Services
             list.Products = await product.OrderByDescending(p => p.ReleaseDate).Skip(skip).Take(take).ToListAsync();
             return list;
         }
+
+        #endregion
+
+        #region Add product - admin
 
         public async Task AddProductForAdmin(AddProductDTO model, IFormFile sourceFile)
         {
@@ -97,6 +122,10 @@ namespace BackEnd.Core.Services
             await _context.SaveChangesAsync();
         }
 
+        #endregion
+
+        #region Get single product - admin
+
         public async Task<EditProductDTO> GetProductForAdmin(long id)
         {
             var product = await _context.Products.FindAsync(id);
@@ -115,6 +144,10 @@ namespace BackEnd.Core.Services
             return model;
         }
 
+        #endregion
+
+        #region Edit product - admin
+
         public async Task EditProduct(EditProductDTO model)
         {
             var product = _context.Products.Find(model.Id);
@@ -130,7 +163,8 @@ namespace BackEnd.Core.Services
             var imagePath = "";
             if (model.SelectedSourceFile != null)
             {
-                if (model.Image == null) {
+                if (model.Image == null)
+                {
                     product.SourceFile = Guid.NewGuid().ToString("N") + Path.GetExtension(model.SelectedSourceFile.FileName);
                 }
 
@@ -162,6 +196,10 @@ namespace BackEnd.Core.Services
             await _context.SaveChangesAsync();
         }
 
+        #endregion
+
+        #region Remove product - admin
+
         public async Task RemoveProduct(long id)
         {
             var product = _context.Products.Find(id);
@@ -169,5 +207,8 @@ namespace BackEnd.Core.Services
             _context.Update(product);
             await _context.SaveChangesAsync();
         }
+
+
+        #endregion
     }
 }

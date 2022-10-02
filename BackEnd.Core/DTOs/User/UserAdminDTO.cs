@@ -133,4 +133,11 @@ namespace BackEnd.Core.DTOs.User
     {
         public int RoleId { get; set; }
     }
+
+    public class AddRoleDTO
+    {
+        public string Title { get; set; }
+
+        public List<int> SelectedPermissions { get; set; }
+    }
 }

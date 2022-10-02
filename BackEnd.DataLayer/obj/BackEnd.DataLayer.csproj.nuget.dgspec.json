@@ -10,14 +10,11 @@
         "projectUniqueName": "D:\\WorkSpace\\FileShop\\BackEnd\\BackEnd.DataLayer\\BackEnd.DataLayer.csproj",
         "projectName": "BackEnd.DataLayer",
         "projectPath": "D:\\WorkSpace\\FileShop\\BackEnd\\BackEnd.DataLayer\\BackEnd.DataLayer.csproj",
-        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\my name\\.nuget\\packages\\",
         "outputPath": "D:\\WorkSpace\\FileShop\\BackEnd\\BackEnd.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\my name\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -40,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -71,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,6 +1,5 @@
 D:\WorkSpace\FileShop\BackEnd\BackEnd.DataLayer\bin\Debug\netcoreapp3.1\BackEnd.DataLayer.deps.json
 D:\WorkSpace\FileShop\BackEnd\BackEnd.DataLayer\bin\Debug\netcoreapp3.1\BackEnd.DataLayer.dll
-D:\WorkSpace\FileShop\BackEnd\BackEnd.DataLayer\obj\Debug\netcoreapp3.1\BackEnd.DataLayer.csprojAssemblyReference.cache
 D:\WorkSpace\FileShop\BackEnd\BackEnd.DataLayer\obj\Debug\netcoreapp3.1\BackEnd.DataLayer.AssemblyInfoInputs.cache
 D:\WorkSpace\FileShop\BackEnd\BackEnd.DataLayer\obj\Debug\netcoreapp3.1\BackEnd.DataLayer.AssemblyInfo.cs
 D:\WorkSpace\FileShop\BackEnd\BackEnd.DataLayer\obj\Debug\netcoreapp3.1\BackEnd.DataLayer.csproj.CoreCompileInputs.cache
@@ -10,3 +9,5 @@ D:\WorkSpace\FileShop\BackEnd\BackEnd.DataLayer\bin\Debug\netcoreapp3.1\BackEnd.
 D:\WorkSpace\FileShop\BackEnd\BackEnd.DataLayer\obj\Debug\netcoreapp3.1\BackEnd.DataLayer.dll
 D:\WorkSpace\FileShop\BackEnd\BackEnd.DataLayer\obj\Debug\netcoreapp3.1\BackEnd.DataLayer.pdb
 D:\WorkSpace\FileShop\BackEnd\BackEnd.DataLayer\obj\Debug\netcoreapp3.1\BackEnd.DataLayer.genruntimeconfig.cache
+D:\WorkSpace\FileShop\BackEnd\BackEnd.DataLayer\obj\Debug\netcoreapp3.1\BackEnd.DataLayer.csproj.AssemblyReference.cache
+D:\WorkSpace\FileShop\BackEnd\BackEnd.DataLayer\obj\Debug\netcoreapp3.1\BackEnd.DataLayer.GeneratedMSBuildEditorConfig.editorconfig
