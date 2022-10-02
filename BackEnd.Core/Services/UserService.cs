@@ -84,7 +84,8 @@ namespace BackEnd.Core.Services
             {
                 Email = user.Email,
                 Username = user.Username,
-                Mobile = user.Mobile
+                Mobile = user.Mobile,
+                Image = user.ImageAvatar
             };
             return info;
         }
@@ -102,6 +103,22 @@ namespace BackEnd.Core.Services
             }
 
             return false;
+        }
+
+        public async Task<UserDashboardInfoDTO> GetUserDashboardInfo(long id)
+        {
+            var user = await GetUserById(id);
+            var info = new UserDashboardInfoDTO()
+            {
+                Username = user.Username,
+                Email = user.Email,
+                Mobile = user.Mobile,
+                RegisterDate = user.RegisterDate,
+                Comments = _context.Comment.Count(c => !c.IsDelete && c.UserId == id),
+                FailedOrders = _context.Orders.Count(o=>!o.IsDelete && !o.IsFinally && o.UserId == id),
+                SuccessOrders = _context.Orders.Count(o => !o.IsDelete && o.IsFinally && o.UserId == id),
+            };
+            return info;
         }
     }
 

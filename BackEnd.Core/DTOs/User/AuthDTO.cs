@@ -56,6 +56,8 @@ namespace BackEnd.Core.DTOs.User
         public string Email { get; set; }
 
         public string Mobile { get; set; }
+
+        public string Image { get; set; }
     }
 
     public enum UserStatus
@@ -64,5 +66,22 @@ namespace BackEnd.Core.DTOs.User
         Disable,
         UserNotFound,
         AlreadyActivated
+    }
+
+    public class UserDashboardInfoDTO
+    {
+        public string Username { get; set; }
+
+        public string Email { get; set; }
+
+        public string Mobile { get; set; }
+
+        public DateTime RegisterDate { get; set; }
+
+        public int SuccessOrders { get; set; }
+
+        public int Comments { get; set; }
+
+        public int FailedOrders { get; set; }
     }
 }

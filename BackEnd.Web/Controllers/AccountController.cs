@@ -126,5 +126,10 @@ namespace BackEnd.Web.Controllers
             return Ok(new { status = "Success", data = await _userService.GetUserInfo(id) });
         }
 
+        [HttpGet("get-dashboard-info/{id}")]
+        public async Task<IActionResult> GetDashboardInfo(long id)
+        {
+            return Ok(new { status = "Success", data = await _userService.GetUserDashboardInfo(id) });
+        }
     }
 }

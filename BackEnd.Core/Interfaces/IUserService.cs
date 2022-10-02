@@ -24,6 +24,8 @@ namespace BackEnd.Core.Interfaces
         Task<UserInfoDTO> GetUserInfo(long id);
 
         Task<bool> CheckUserStatus(string code);
+
+        Task<UserDashboardInfoDTO> GetUserDashboardInfo(long id);
     }
 
     public interface IAdminUserService
