@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BackEnd.Core.DTOs.Product
 {
-    public class GetLatestProducts
+    public class GetHomeProducts
     {
         public string Image { get; set; }
 

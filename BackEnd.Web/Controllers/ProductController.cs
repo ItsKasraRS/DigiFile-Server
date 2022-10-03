@@ -25,5 +25,11 @@ namespace BackEnd.Web.Controllers
         {
             return Ok(new { status = "Success", data = await _productService.GetLatestProducts() });
         }
+
+        [HttpGet("get-popular-products")]
+        public async Task<IActionResult> GetPopularProducts()
+        {
+            return Ok(new { status = "Success", data = await _productService.GetPopularProducts() });
+        }
     }
 }

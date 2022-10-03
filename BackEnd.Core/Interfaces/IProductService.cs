@@ -13,7 +13,8 @@ namespace BackEnd.Core.Interfaces
     {
         // Site Services
 
-        Task<List<GetLatestProducts>> GetLatestProducts();
+        Task<List<GetHomeProducts>> GetLatestProducts();
+        Task<List<GetHomeProducts>> GetPopularProducts();
     }
 
     public interface IAdminProductService

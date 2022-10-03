@@ -33,10 +33,25 @@ namespace BackEnd.Core.Services
 
         #region Get Latest products - site
 
-        public async Task<List<GetLatestProducts>> GetLatestProducts()
+        public async Task<List<GetHomeProducts>> GetLatestProducts()
         {
             return await _context.Products.Where(p => !p.IsDelete).OrderByDescending(p => p.ReleaseDate).Take(8).Select(p =>
-                new GetLatestProducts()
+                new GetHomeProducts()
+                {
+                    Title = p.Title,
+                    Price = p.Price,
+                    Image = p.Image
+                }).ToListAsync();
+        }
+
+        #endregion
+
+        #region Get popular products - site
+        
+        public async Task<List<GetHomeProducts>> GetPopularProducts()
+        {
+            return await _context.Products.Where(p => !p.IsDelete).OrderByDescending(p => p.Like).Take(8).Select(p =>
+                new GetHomeProducts()
                 {
                     Title = p.Title,
                     Price = p.Price,
