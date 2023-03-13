@@ -13,8 +13,8 @@ namespace BackEnd.DataLayer.Entities.Product
         [Required]
         public long UserId { get; set; }
         [Required]
-        public int OrderSum { get; set; }
-        public bool IsFinally { get; set; }
+        public decimal OrderSum { get; set; }
+        public string IsFinally { get; set; }
         [Required]
         public DateTime CreateDate { get; set; }
 
@@ -40,7 +40,7 @@ namespace BackEnd.DataLayer.Entities.Product
         [Required]
         public long ProductId { get; set; }
         [Required]
-        public int Price { get; set; }
+        public decimal Price { get; set; }
 
         #region Refrence
 

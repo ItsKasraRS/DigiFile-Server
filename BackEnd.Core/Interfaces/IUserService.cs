@@ -26,6 +26,8 @@ namespace BackEnd.Core.Interfaces
         Task<bool> CheckUserStatus(string code);
 
         Task<UserDashboardInfoDTO> GetUserDashboardInfo(long id);
+        Task EditProfile(long id, EditProfileDTO model);
+        Task<bool> ChangePassword(ChangePasswordDTO model);
     }
 
     public interface IAdminUserService

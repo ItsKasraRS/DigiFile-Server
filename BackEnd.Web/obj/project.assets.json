@@ -2,6 +2,46 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "AutoMapper/6.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.3.0",
+          "NETStandard.Library": "1.6.1",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Collections.Specialized": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Linq.Queryable": "4.3.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime.Serialization.Primitives": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        }
+      },
+      "eWAY.Rapid/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "6.2.2",
+          "Newtonsoft.Json": "10.0.3"
+        },
+        "compile": {
+          "lib/net45/eWAY.Rapid.dll": {}
+        },
+        "runtime": {
+          "lib/net45/eWAY.Rapid.dll": {}
+        },
+        "resource": {
+          "lib/net45/en/eWAY.Rapid.resources.dll": {
+            "locale": "en"
+          }
+        }
+      },
       "MailKit/2.15.0": {
         "type": "package",
         "dependencies": {
@@ -623,7 +663,7 @@
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
-      "Microsoft.Bcl.HashCode/1.1.0": {
+      "Microsoft.Bcl.HashCode/1.1.1": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.1/Microsoft.Bcl.HashCode.dll": {}
@@ -1619,6 +1659,15 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "Polly/7.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Polly.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Polly.dll": {}
+        }
+      },
       "Portable.BouncyCastle/1.8.10": {
         "type": "package",
         "compile": {
@@ -1834,6 +1883,22 @@
           }
         }
       },
+      "Square/25.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.HashCode": "1.1.1",
+          "Microsoft.CSharp": "4.7.0",
+          "Newtonsoft.Json": "11.0.2",
+          "Polly": "7.2.1",
+          "System.Collections.Immutable": "1.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Square.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Square.dll": {}
+        }
+      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1907,7 +1972,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Collections.NonGeneric.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
@@ -1925,7 +1990,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Collections.Specialized.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.Specialized.dll": {}
@@ -1937,7 +2002,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {}
+          "ref/netstandard1.0/System.ComponentModel.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.ComponentModel.dll": {}
@@ -1960,7 +2025,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {}
+          "ref/netstandard1.0/System.ComponentModel.Primitives.dll": {}
         },
         "runtime": {
           "lib/netstandard1.0/System.ComponentModel.Primitives.dll": {}
@@ -1986,7 +2051,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/_._": {}
+          "ref/netstandard1.5/System.ComponentModel.TypeConverter.dll": {}
         },
         "runtime": {
           "lib/netstandard1.5/System.ComponentModel.TypeConverter.dll": {}
@@ -2199,24 +2264,23 @@
           }
         }
       },
-      "System.Dynamic.Runtime/4.0.11": {
+      "System.Dynamic.Runtime/4.3.0": {
         "type": "package",
         "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Diagnostics.Debug": "4.0.11",
-          "System.Globalization": "4.0.11",
-          "System.Linq": "4.1.0",
-          "System.Linq.Expressions": "4.1.0",
-          "System.ObjectModel": "4.0.12",
-          "System.Reflection": "4.1.0",
-          "System.Reflection.Emit": "4.0.1",
-          "System.Reflection.Emit.ILGeneration": "4.0.1",
-          "System.Reflection.Primitives": "4.0.1",
-          "System.Reflection.TypeExtensions": "4.1.0",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Threading": "4.0.11"
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.ObjectModel": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.3/System.Dynamic.Runtime.dll": {}
@@ -2424,6 +2488,25 @@
           "lib/netstandard1.6/System.Linq.Expressions.dll": {}
         }
       },
+      "System.Linq.Queryable/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.0/System.Linq.Queryable.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Linq.Queryable.dll": {}
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -2610,7 +2693,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.1/_._": {}
+          "ref/netstandard1.1/System.Reflection.Emit.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.dll": {}
@@ -2624,7 +2707,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {}
+          "ref/netstandard1.0/System.Reflection.Emit.ILGeneration.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.ILGeneration.dll": {}
@@ -2857,7 +2940,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Runtime.Serialization.Primitives.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Runtime.Serialization.Primitives.dll": {}
@@ -3429,6 +3512,40 @@
     }
   },
   "libraries": {
+    "AutoMapper/6.2.2": {
+      "sha512": "eGKcnJdoF5rYMWPUaSPtlWdvua9xw4hnQN5kM/X4AXLGKghrtPIaMv+RYoA3sj0kyZ3X6wZ1Qj67F+u0pCCPaw==",
+      "type": "package",
+      "path": "automapper/6.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.6.2.2.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net40/AutoMapper.dll",
+        "lib/net40/AutoMapper.xml",
+        "lib/net45/AutoMapper.dll",
+        "lib/net45/AutoMapper.xml",
+        "lib/netstandard1.1/AutoMapper.dll",
+        "lib/netstandard1.1/AutoMapper.xml",
+        "lib/netstandard1.3/AutoMapper.dll",
+        "lib/netstandard1.3/AutoMapper.xml"
+      ]
+    },
+    "eWAY.Rapid/1.6.3": {
+      "sha512": "m49egOOF2AW0vZqNFmEOyxR9IjQ60sXswx4RD5bKEvt0W+WU5pgeXSSlgaNt+s6yPyFEWpelW6Rj2Z7XaV7p3w==",
+      "type": "package",
+      "path": "eway.rapid/1.6.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "eway.rapid.1.6.3.nupkg.sha512",
+        "eway.rapid.nuspec",
+        "lib/net45/eWAY.Rapid.XML",
+        "lib/net45/eWAY.Rapid.dll",
+        "lib/net45/eWAY.Rapid.pdb",
+        "lib/net45/en/eWAY.Rapid.resources.dll"
+      ]
+    },
     "MailKit/2.15.0": {
       "sha512": "9ihv6pRmjmBEAP4eXlDeo9srFQF9dVtYP1/jzj3I3BV9tBRk66NLdAF+8jkgUtauMKmns0yBvtfMFiBnNkHKDQ==",
       "type": "package",
@@ -4066,13 +4183,14 @@
         "version.txt"
       ]
     },
-    "Microsoft.Bcl.HashCode/1.1.0": {
-      "sha512": "J2G1k+u5unBV+aYcwxo94ip16Rkp65pgWFb0R6zwJipzWNMgvqlWeuI7/+R+e8bob66LnSG+llLJ+z8wI94cHg==",
+    "Microsoft.Bcl.HashCode/1.1.1": {
+      "sha512": "MalY0Y/uM/LjXtHfX/26l2VtN4LDNZ2OE3aumNOHDLsT4fNYy2hiHXI4CXCqKpNUNm7iJ2brrc4J89UdaL56FA==",
       "type": "package",
-      "path": "microsoft.bcl.hashcode/1.1.0",
+      "path": "microsoft.bcl.hashcode/1.1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net461/Microsoft.Bcl.HashCode.dll",
@@ -4083,7 +4201,7 @@
         "lib/netstandard2.0/Microsoft.Bcl.HashCode.xml",
         "lib/netstandard2.1/Microsoft.Bcl.HashCode.dll",
         "lib/netstandard2.1/Microsoft.Bcl.HashCode.xml",
-        "microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
+        "microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
         "microsoft.bcl.hashcode.nuspec",
         "ref/net461/Microsoft.Bcl.HashCode.dll",
         "ref/netcoreapp2.1/Microsoft.Bcl.HashCode.dll",
@@ -5619,6 +5737,29 @@
         "nuget.frameworks.nuspec"
       ]
     },
+    "Polly/7.2.1": {
+      "sha512": "Od8SnPlpQr+PuAS0YzY3jgtzaDNknlIuAaldN2VEIyTvm/wCg22C5nUkUV1BEG8rIsub5RFMoV/NEQ0tM/+7Uw==",
+      "type": "package",
+      "path": "polly/7.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/Polly.dll",
+        "lib/net461/Polly.pdb",
+        "lib/net461/Polly.xml",
+        "lib/net472/Polly.dll",
+        "lib/net472/Polly.pdb",
+        "lib/net472/Polly.xml",
+        "lib/netstandard1.1/Polly.dll",
+        "lib/netstandard1.1/Polly.pdb",
+        "lib/netstandard1.1/Polly.xml",
+        "lib/netstandard2.0/Polly.dll",
+        "lib/netstandard2.0/Polly.pdb",
+        "lib/netstandard2.0/Polly.xml",
+        "polly.7.2.1.nupkg.sha512",
+        "polly.nuspec"
+      ]
+    },
     "Portable.BouncyCastle/1.8.10": {
       "sha512": "XLhjNAwuVB9ynwn11l5K44eyozh8q6gFseTrlnLNttejimglX7+F9+vxh60LPjvA/DAt6fUdS43N3ah8K6eaWg==",
       "type": "package",
@@ -5916,6 +6057,20 @@
         "runtimes/win-x86/native/sni.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Square/25.1.0": {
+      "sha512": "0xvkV5xq0/bnMg/nkWdj6SVWIo+LVO2tSI7ylGqo6KsunKtxMcoEQ6Oy13RN571PSupilig92FMEzvoqBrfKqQ==",
+      "type": "package",
+      "path": "square/25.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "lib/netstandard2.0/Square.dll",
+        "square.25.1.0.nupkg.sha512",
+        "square.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -6903,12 +7058,13 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Dynamic.Runtime/4.0.11": {
-      "sha512": "db34f6LHYM0U0JpE+sOmjar27BnqTVkbLJhgfwMpTdgTigG/Hna3m2MYVwnFzGGKnEJk2UXFuoVTr8WUbU91/A==",
+    "System.Dynamic.Runtime/4.3.0": {
+      "sha512": "SNVi1E/vfWUAs/WYKhE9+qlS6KqK0YVhnlT0HQtr8pMIA8YX3lwy3uPMownDwdYISBdmAF/2holEIldVp85Wag==",
       "type": "package",
-      "path": "system.dynamic.runtime/4.0.11",
+      "path": "system.dynamic.runtime/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6969,7 +7125,7 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
         "runtimes/aot/lib/netcore50/System.Dynamic.Runtime.dll",
-        "system.dynamic.runtime.4.0.11.nupkg.sha512",
+        "system.dynamic.runtime.4.3.0.nupkg.sha512",
         "system.dynamic.runtime.nuspec"
       ]
     },
@@ -7563,6 +7719,65 @@
         "runtimes/aot/lib/netcore50/System.Linq.Expressions.dll",
         "system.linq.expressions.4.3.0.nupkg.sha512",
         "system.linq.expressions.nuspec"
+      ]
+    },
+    "System.Linq.Queryable/4.3.0": {
+      "sha512": "In1Bmmvl/j52yPu3xgakQSI0YIckPUr870w4K5+Lak3JCCa8hl+my65lABOuKfYs4ugmZy25ScFerC4nz8+b6g==",
+      "type": "package",
+      "path": "system.linq.queryable/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/monoandroid10/_._",
+        "lib/monotouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.Linq.Queryable.dll",
+        "lib/netstandard1.3/System.Linq.Queryable.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/monoandroid10/_._",
+        "ref/monotouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/System.Linq.Queryable.dll",
+        "ref/netcore50/System.Linq.Queryable.xml",
+        "ref/netcore50/de/System.Linq.Queryable.xml",
+        "ref/netcore50/es/System.Linq.Queryable.xml",
+        "ref/netcore50/fr/System.Linq.Queryable.xml",
+        "ref/netcore50/it/System.Linq.Queryable.xml",
+        "ref/netcore50/ja/System.Linq.Queryable.xml",
+        "ref/netcore50/ko/System.Linq.Queryable.xml",
+        "ref/netcore50/ru/System.Linq.Queryable.xml",
+        "ref/netcore50/zh-hans/System.Linq.Queryable.xml",
+        "ref/netcore50/zh-hant/System.Linq.Queryable.xml",
+        "ref/netstandard1.0/System.Linq.Queryable.dll",
+        "ref/netstandard1.0/System.Linq.Queryable.xml",
+        "ref/netstandard1.0/de/System.Linq.Queryable.xml",
+        "ref/netstandard1.0/es/System.Linq.Queryable.xml",
+        "ref/netstandard1.0/fr/System.Linq.Queryable.xml",
+        "ref/netstandard1.0/it/System.Linq.Queryable.xml",
+        "ref/netstandard1.0/ja/System.Linq.Queryable.xml",
+        "ref/netstandard1.0/ko/System.Linq.Queryable.xml",
+        "ref/netstandard1.0/ru/System.Linq.Queryable.xml",
+        "ref/netstandard1.0/zh-hans/System.Linq.Queryable.xml",
+        "ref/netstandard1.0/zh-hant/System.Linq.Queryable.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.linq.queryable.4.3.0.nupkg.sha512",
+        "system.linq.queryable.nuspec"
       ]
     },
     "System.Memory/4.5.3": {
@@ -10315,7 +10530,9 @@
       "Microsoft.AspNetCore.Mvc >= 2.2.0",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.1.0",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5",
+      "Square >= 25.1.0",
+      "eWAY.Rapid >= 1.6.3"
     ]
   },
   "packageFolders": {
@@ -10390,6 +10607,14 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[3.1.5, )"
+          },
+          "Square": {
+            "target": "Package",
+            "version": "[25.1.0, )"
+          },
+          "eWAY.Rapid": {
+            "target": "Package",
+            "version": "[1.6.3, )"
           }
         },
         "imports": [
@@ -10420,5 +10645,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'eWAY.Rapid 1.6.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "eWAY.Rapid",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

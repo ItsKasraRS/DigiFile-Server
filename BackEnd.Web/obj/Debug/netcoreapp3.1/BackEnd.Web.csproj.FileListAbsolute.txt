@@ -135,7 +135,6 @@ D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\bin\Debug\netcoreapp3.1\Microsoft.AspN
 D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
 D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\obj\Debug\netcoreapp3.1\BackEnd.Web.csproj.CoreCompileInputs.cache
-D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\obj\Debug\netcoreapp3.1\BackEnd.Web.MvcApplicationPartsAssemblyInfo.cs
 D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\obj\Debug\netcoreapp3.1\BackEnd.Web.MvcApplicationPartsAssemblyInfo.cache
 D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\obj\Debug\netcoreapp3.1\BackEnd.Web.Views.pdb
 D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EmailTemp.cshtml.g.cs
@@ -146,3 +145,9 @@ D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\bin\Debug\netcoreapp3.1\runtimes\unix\
 D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
 D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\obj\Debug\netcoreapp3.1\BackEnd.Web.csproj.AssemblyReference.cache
 D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\obj\Debug\netcoreapp3.1\BackEnd.Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\bin\Debug\netcoreapp3.1\Polly.dll
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\bin\Debug\netcoreapp3.1\Square.dll
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\obj\Debug\netcoreapp3.1\BackEnd.Web.MvcApplicationPartsAssemblyInfo.cs
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\bin\Debug\netcoreapp3.1\eWAY.Rapid.dll
+D:\WorkSpace\FileShop\BackEnd\BackEnd.Web\bin\Debug\netcoreapp3.1\en\eWAY.Rapid.resources.dll

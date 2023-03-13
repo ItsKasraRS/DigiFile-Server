@@ -5,7 +5,7 @@
         public BasePaging()
         {
             PageId = 1;
-            TakeEntity = 9;
+            TakeEntity = 12;
         }
 
         public int PageId { get; set; }

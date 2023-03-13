@@ -115,10 +115,55 @@ namespace BackEnd.Core.Services
                 Mobile = user.Mobile,
                 RegisterDate = user.RegisterDate,
                 Comments = _context.Comment.Count(c => !c.IsDelete && c.UserId == id),
-                FailedOrders = _context.Orders.Count(o=>!o.IsDelete && !o.IsFinally && o.UserId == id),
-                SuccessOrders = _context.Orders.Count(o => !o.IsDelete && o.IsFinally && o.UserId == id),
+                FailedOrders = _context.Orders.Count(o=>!o.IsDelete && o.IsFinally == "Failed" && o.UserId == id),
+                SuccessOrders = _context.Orders.Count(o => !o.IsDelete && o.IsFinally == "Paid" && o.UserId == id),
             };
             return info;
+        }
+
+        public async Task EditProfile(long id, EditProfileDTO model)
+        {
+            var user = await _context.Users.FindAsync(id);
+            user.Username = model.Username.Trim();
+            user.Mobile = model.Mobile.Trim();
+            user.ImageAvatar = model.ImageAvatar;
+
+            string imagePath = "";
+            if (model.SelectedImage != null)
+            {
+                if (user.ImageAvatar == null)
+                {
+                    user.ImageAvatar = Guid.NewGuid().ToString("N") + Path.GetExtension(model.SelectedImage.FileName);
+                }
+
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/user/",
+                    user.ImageAvatar);
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    model.SelectedImage.CopyTo(stream);
+                }
+            }
+
+            _context.Update(user);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<bool> ChangePassword(ChangePasswordDTO model)
+        {
+            string password = PasswordHelper.EncodePasswordMd5(model.CurrentPassword);
+            var user = await _context.Users.SingleOrDefaultAsync(u => u.Password == password);
+
+            if(user == null)
+            {
+                return false;
+            }
+
+            user.Password = PasswordHelper.EncodePasswordMd5(model.NewPassword);
+
+            _context.Update(user);
+            await _context.SaveChangesAsync();
+
+            return true;
         }
     }
 

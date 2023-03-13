@@ -28,11 +28,13 @@ namespace BackEnd.Web.Controllers
 
         private IUserService _userService;
         private IViewRenderService _renderService;
+        private IOrderService _orderService;
 
-        public AccountController(IUserService userService, IViewRenderService renderService)
+        public AccountController(IUserService userService, IViewRenderService renderService, IOrderService orderService)
         {
             _userService = userService;
             _renderService = renderService;
+            _orderService = orderService;
         }
 
         #endregion
@@ -61,6 +63,7 @@ namespace BackEnd.Web.Controllers
             EmailSender.Send(model.Email.ToLower().Trim(), "Activate account", body);
             return Ok(new {status = "Success", message = "You are successfully registered!"});
         }
+
 
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDTO model)
@@ -92,6 +95,7 @@ namespace BackEnd.Web.Controllers
             return Ok(new { status = "NotFound", description = "The user was not found" });
         }
 
+
         [HttpGet("activate-account/{code}")]
         public async Task<IActionResult> ActivateAccount(string code)
         {
@@ -101,6 +105,7 @@ namespace BackEnd.Web.Controllers
             }
             return BadRequest(new {status = "NotFound", message = "user not found"});
         }
+
 
         [HttpPost("check-auth")]
         public async Task<IActionResult> CheckAuth()
@@ -114,11 +119,13 @@ namespace BackEnd.Web.Controllers
             return Ok(new { status = "UnAuthorized" });
         }
 
+
         [HttpGet("getUserById/{id}")]
         public async Task<IActionResult> GetUserById(long id)
         {
             return Ok(new {status = "Success", data = await _userService.GetUserById(id)});
         }
+
 
         [HttpGet("get-sidebar-info/{id}")]
         public async Task<IActionResult> GetSidebarInfoById(long id)
@@ -126,10 +133,49 @@ namespace BackEnd.Web.Controllers
             return Ok(new { status = "Success", data = await _userService.GetUserInfo(id) });
         }
 
+
         [HttpGet("get-dashboard-info/{id}")]
         public async Task<IActionResult> GetDashboardInfo(long id)
         {
             return Ok(new { status = "Success", data = await _userService.GetUserDashboardInfo(id) });
+        }
+
+
+        [HttpPut("edit-profile")]
+        public async Task<IActionResult> EditProfile([FromForm]EditProfileDTO model)
+        {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(new { status = "Error", error = model });
+            }
+
+            await _userService.EditProfile(User.GetUserId(), model);
+
+            return Ok(new { status = "Success", message = "User information has been changed successfully" });
+        }
+
+
+        [HttpPost("change-password")]
+        public async Task<IActionResult> ChangePassword(ChangePasswordDTO model)
+        {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(model);
+            }
+
+            bool state = await _userService.ChangePassword(model);
+            if(state)
+            {
+                return Ok(new { status = "Success", message = "Password successfully changed!" });
+            }
+
+            return BadRequest(new { status = "Error", message = "Current password is wrong!" });
+        }
+
+        [HttpGet("user-orders")]
+        public async Task<IActionResult> GetUserOrders()
+        {
+            return Ok(new { status = "Success", data = await _orderService.GetUserOrders(User.GetUserId()) });
         }
     }
 }

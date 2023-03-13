@@ -46,6 +46,8 @@ namespace BackEnd.DataLayer.Entities.Product
 
         public List<Comment> Comments { get; set; }
 
+        public List<ProductGallery> ProductGalleries { get; set; }
+
         [ForeignKey("CategoryId")]
         public Category Category { get; set; }
 
@@ -89,9 +91,17 @@ namespace BackEnd.DataLayer.Entities.Product
         [Key]
         public long Id { get; set; }
 
+        public long ProductId { get; set; }
+
         public string GalleryImage { get; set; }
 
         public bool IsDelete { get; set; }
 
+
+        #region Relations
+
+        public Product Product { get; set; }
+
+        #endregion
     }
 }

@@ -94,11 +94,11 @@ namespace BackEnd.DataLayer.Migrations
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsFinally")
-                        .HasColumnType("bit");
+                    b.Property<string>("IsFinally")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OrderSum")
-                        .HasColumnType("int");
+                    b.Property<decimal>("OrderSum")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<long>("UserId")
                         .HasColumnType("bigint");
@@ -120,8 +120,8 @@ namespace BackEnd.DataLayer.Migrations
                     b.Property<long>("OrderId")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<long>("ProductId")
                         .HasColumnType("bigint");
@@ -198,7 +198,12 @@ namespace BackEnd.DataLayer.Migrations
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
 
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("ProductGalleries");
                 });
@@ -428,6 +433,15 @@ namespace BackEnd.DataLayer.Migrations
                     b.HasOne("BackEnd.DataLayer.Entities.Product.Category", "SubCategory")
                         .WithMany("SubProducts")
                         .HasForeignKey("SubCategoryId");
+                });
+
+            modelBuilder.Entity("BackEnd.DataLayer.Entities.Product.ProductGallery", b =>
+                {
+                    b.HasOne("BackEnd.DataLayer.Entities.Product.Product", "Product")
+                        .WithMany("ProductGalleries")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("BackEnd.DataLayer.Entities.Product.ProductInfo", b =>

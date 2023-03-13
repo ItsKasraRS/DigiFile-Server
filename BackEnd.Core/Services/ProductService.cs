@@ -4,9 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BackEnd.Core.DTOs;
 using BackEnd.Core.DTOs.Product;
 using BackEnd.Core.Interfaces;
 using Backend.Core.Utilities.Extensions;
+using BackEnd.Core.Utilities.Extensions;
 using BackEnd.DataLayer.Context;
 using BackEnd.DataLayer.Entities.Product;
 using Microsoft.AspNetCore.Http;
@@ -57,6 +59,93 @@ namespace BackEnd.Core.Services
                     Price = p.Price,
                     Image = p.Image
                 }).ToListAsync();
+        }
+
+        #endregion
+
+        #region Filter products - site
+
+        public async Task<FilterProductsDTO> FilterProducts(FilterProductsDTO filter)
+        {
+            IQueryable<Product> product = _context.Products;
+            if (!string.IsNullOrEmpty(filter.Title))
+            {
+                product = product.Where(p => p.Title.Contains(filter.Title));
+            }
+
+            if (filter.Categories != null)
+            {
+                product = product.Where(p => p.CategoryId == filter.Categories || p.SubCategoryId == filter.Categories);
+            }
+
+            switch (filter.SortBy)
+            {
+                case ProductSort.Latest:
+                    product = product.OrderByDescending(p => p.ReleaseDate);
+                    break;
+
+                case ProductSort.Popular:
+                    product = product.OrderByDescending(p => p.Like);
+                    break;
+
+                case ProductSort.PriceAsc:
+                    product = product.OrderBy(p => p.Price);
+                    break;
+
+                case ProductSort.PriceDesc:
+                    product = product.OrderByDescending(p => p.Price);
+                    break;
+            }
+
+            filter.Products = await product.Select(p=>new ProductItemDTO()
+            {
+                Id = p.Id,
+                Title = p.Title,
+                Price = p.Price,
+                Image = p.Image
+            }).ToListAsync();
+            var count = (int)Math.Ceiling(product.Count() / (double)filter.TakeEntity);
+            var pager = Pager.Build(count, filter.PageId, filter.TakeEntity);
+            var list = await product.Paging(pager).Select(p=>new ProductItemDTO()
+            {
+                Id = p.Id,
+                Title = p.Title,
+                Price = p.Price,
+                Image = p.Image
+            }).ToListAsync();
+            return filter.SetProduct(list).SetPaging(pager);
+        }
+
+        public async Task<ProductDetailsDTO> GetProductDetails(long id)
+        {
+            var detail = await _context.Products.Where(p => p.Id == id).FirstOrDefaultAsync();
+            var product = await _context.Products.Where(p => p.Id == id && !p.IsDelete).Select(p=>new ProductDetailsDTO
+            {
+                Id=p.Id,
+                CategoryId = p.CategoryId,
+                Description = p.Description,
+                Image = p.Image,
+                Like = p.Like,
+                Price = p.Price,
+                ProductInfos = p.ProductInfos.Select(p=> new ProductInfoDTO { InfoTitle = p.InfoTitle , InfoValue = p.InfoValue }).ToList(),
+                ProductPictures = null,
+                ReleaseDate = p.ReleaseDate,
+                SourceFile = p.SourceFile,
+                SubCategoryId = p.SubCategoryId,
+                Title = p.Title
+            }).FirstOrDefaultAsync();
+
+            return product;
+        }
+
+        public async Task<Product> GetProductForUserOrder(long productId)
+        {
+            return await _context.Products.SingleOrDefaultAsync(p => !p.IsDelete && p.Id == productId);
+        }
+
+        public async Task<List<ProductGallery>> GetProductGallery(long productId)
+        {
+            return await _context.ProductGalleries.Where(pg => pg.ProductId == productId).ToListAsync();
         }
 
         #endregion

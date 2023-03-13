@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -83,5 +84,25 @@ namespace BackEnd.Core.DTOs.User
         public int Comments { get; set; }
 
         public int FailedOrders { get; set; }
+    }
+
+    public class EditProfileDTO
+    {
+        public string Username { get; set; }
+
+        public string Mobile { get; set; }
+
+        public string ImageAvatar { get; set; }
+
+        public IFormFile? SelectedImage { get; set; }
+    }
+
+    public class ChangePasswordDTO
+    {
+        [Required]
+        public string CurrentPassword { get; set; }
+
+        [Required]
+        public string NewPassword { get; set; }
     }
 }

@@ -13,16 +13,17 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 
+
 namespace BackEnd.Web
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(Microsoft.Extensions.Configuration.IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public Microsoft.Extensions.Configuration.IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -50,6 +51,7 @@ namespace BackEnd.Web
             services.AddScoped<IProductService, ProductService>(); services.AddScoped<IAdminProductService, AdminProductService>();
             services.AddScoped<ICategoryService, CategoryService>(); services.AddScoped<IAdminCategoryService, AdminCategoryService>();
             services.AddScoped<IRoleService, RoleService>(); services.AddScoped<IAdminRoleService, AdminRoleService>();
+            services.AddScoped<IOrderService, OrderService>();
 
             #endregion
 

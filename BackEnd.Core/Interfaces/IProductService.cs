@@ -15,6 +15,10 @@ namespace BackEnd.Core.Interfaces
 
         Task<List<GetHomeProducts>> GetLatestProducts();
         Task<List<GetHomeProducts>> GetPopularProducts();
+        Task<FilterProductsDTO> FilterProducts(FilterProductsDTO filter);
+        Task<ProductDetailsDTO> GetProductDetails(long id);
+        Task<Product> GetProductForUserOrder(long productId);
+        Task<List<ProductGallery>> GetProductGallery(long productId);
     }
 
     public interface IAdminProductService
@@ -26,6 +30,5 @@ namespace BackEnd.Core.Interfaces
         Task<EditProductDTO> GetProductForAdmin(long id);
         Task EditProduct(EditProductDTO model);
         Task RemoveProduct(long id);
-
     }
 }
