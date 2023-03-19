@@ -170,6 +170,13 @@ namespace BackEnd.Web.Controllers
 
             QueryTransactionResponse response = ewayClient.QueryTransaction(AccessCode);
 
+            if(response.Errors != null)
+            {
+                await _orderService.ChangeOrderStatus("Failed", User.GetUserId());
+            }
+
+            await _orderService.ChangeOrderStatus("Paid", User.GetUserId());
+
             return Ok(response);
         }
     }

@@ -29,12 +29,14 @@ namespace BackEnd.Web.Controllers
         private IUserService _userService;
         private IViewRenderService _renderService;
         private IOrderService _orderService;
+        private ICommentService _commentService;
 
-        public AccountController(IUserService userService, IViewRenderService renderService, IOrderService orderService)
+        public AccountController(IUserService userService, IViewRenderService renderService, IOrderService orderService, ICommentService commentService)
         {
             _userService = userService;
             _renderService = renderService;
             _orderService = orderService;
+            _commentService = commentService;
         }
 
         #endregion
@@ -176,6 +178,13 @@ namespace BackEnd.Web.Controllers
         public async Task<IActionResult> GetUserOrders()
         {
             return Ok(new { status = "Success", data = await _orderService.GetUserOrders(User.GetUserId()) });
+        }
+
+        [HttpGet("user-comments")]
+        public async Task<IActionResult> GetUserComments()
+        {
+            var comments = await _commentService.GetUserComments(User.GetUserId());
+            return Ok(new { status = "Success", data = comments });
         }
     }
 }

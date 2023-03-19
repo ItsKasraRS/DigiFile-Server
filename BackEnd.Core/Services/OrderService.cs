@@ -129,6 +129,19 @@ namespace BackEnd.Core.Services
 
         #endregion
 
+        #region Change Order Status
+
+        public async Task ChangeOrderStatus(string status, long userId)
+        {
+            var order = await GetUserOpenOrder(userId);
+            order.IsFinally = status;
+
+            _context.Update(order);
+            await _context.SaveChangesAsync();
+        }
+
+        #endregion
+
         #region ======= * Order Details * =======
 
         #region Cart

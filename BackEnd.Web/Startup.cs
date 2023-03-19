@@ -52,6 +52,7 @@ namespace BackEnd.Web
             services.AddScoped<ICategoryService, CategoryService>(); services.AddScoped<IAdminCategoryService, AdminCategoryService>();
             services.AddScoped<IRoleService, RoleService>(); services.AddScoped<IAdminRoleService, AdminRoleService>();
             services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<ICommentService, CommentService>();
 
             #endregion
 

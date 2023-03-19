@@ -15,11 +15,12 @@ namespace BackEnd.DataLayer.Entities.Product
 
         public long ProductId { get; set; }
 
+        [Required]
         public string Text { get; set; }
 
         public DateTime CreateDate { get; set; }
 
-        public bool Status { get; set; }
+        public string Status { get; set; }
 
         public long? ParentId { get; set; }
 

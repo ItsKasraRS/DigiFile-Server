@@ -27,6 +27,7 @@ namespace BackEnd.Core.Interfaces
         #endregion
 
         Task<List<ShowUserOrdersDTO>> GetUserOrders(long userId);
+        Task ChangeOrderStatus(string status, long userId);
 
         #endregion
 
